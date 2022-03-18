@@ -1,4 +1,4 @@
-# 手动实现mini版本的Dubbo的RPC框架
+# tiny-rpc
 
 ![http://r8x6hblk3.hn-bkt.clouddn.com/tiny-rpc-architecture.png](http://r8x6hblk3.hn-bkt.clouddn.com/tiny-rpc-architecture.png)
 
