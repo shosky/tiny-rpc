@@ -20,9 +20,12 @@
 6. 服务注册与发现：采用Zookeeper实现服务注册与发现
 
 ## 使用方式
-1. 启动Zookeeper。 docker pull zookeeper & docker run --name my_zookeeper -d zookeeper:latest
-2. 启动Consumer服务：mvn clean springboot:run
-3. 启动Provider服务：mvn clean springboot🇧🇳
+1. 启动Zookeeper。 
+`docker pull zookeeper & docker run --name my_zookeeper -d zookeeper:latest` 
+2. 启动Consumer服务：
+`mvn clean springboot:run` 
+3. 启动Provider服务：
+`mvn clean springboo:run`
 4. curl http://127.0.0.1:8080/hello 
 
 输出结果
