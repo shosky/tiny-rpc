@@ -26,7 +26,7 @@
 `mvn clean springboot:run` 
 3. 启动Provider服务：
 `mvn clean springboo:run`
-4. curl http://127.0.0.1:8080/hello 
+4. `curl http://127.0.0.1:8080/hello`
 
 输出结果
 ```shell
