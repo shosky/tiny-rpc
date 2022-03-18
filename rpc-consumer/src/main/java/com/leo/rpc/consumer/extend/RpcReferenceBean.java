@@ -13,7 +13,7 @@ import java.lang.reflect.Proxy;
  * @date: 2022-03-16
  * @description: 对于@TinyReference注解的Bean，通过TinyReferenceBean生成代理类。
  **/
-public class TinyRpcReferenceBean implements FactoryBean<Object> {
+public class RpcReferenceBean implements FactoryBean<Object> {
     private Class<?> interfaceClass;
 
     private String serviceVersion;
@@ -26,7 +26,6 @@ public class TinyRpcReferenceBean implements FactoryBean<Object> {
 
     private Object object;
 
-
     @Override
     public Object getObject() throws Exception {
         return object;
@@ -37,18 +36,12 @@ public class TinyRpcReferenceBean implements FactoryBean<Object> {
         return interfaceClass;
     }
 
-    /**
-     * 动态生成代理对象并赋值给getObject()
-     *
-     * @throws Exception
-     */
     public void init() throws Exception {
         IRegistryService registryService = RegistryFactory.getInstance(this.registryAddr, RegistryType.valueOf(this.registryType));
         this.object = Proxy.newProxyInstance(
                 interfaceClass.getClassLoader(),
                 new Class<?>[]{interfaceClass},
-                new RpcInvokerProxy(serviceVersion, timeout, registryService)
-        );
+                new RpcInvokerProxy(serviceVersion, timeout, registryService));
     }
 
     public void setInterfaceClass(Class<?> interfaceClass) {

@@ -1,5 +1,7 @@
 package com.leo.rpc.consumer.annotation;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -11,8 +13,9 @@ import java.lang.annotation.Target;
  * @description: 声明代理Bean
  **/
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface TinyReference {
+@Target(ElementType.FIELD)
+@Autowired
+public @interface TinyRpcReference {
 
     /**
      * 服务版本
@@ -40,5 +43,5 @@ public @interface TinyReference {
      *
      * @return
      */
-    long timeout() default 5000;
+    long timeout() default 3000;
 }

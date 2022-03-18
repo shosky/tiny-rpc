@@ -1,0 +1,5 @@
+rpc:
+  config:
+    servicePort: 2781
+    registryType: ZOOKEEPER
+    registryAddr: 127.0.0.1:2181

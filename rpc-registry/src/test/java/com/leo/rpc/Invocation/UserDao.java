@@ -6,4 +6,6 @@ package com.leo.rpc.Invocation;
  * @description:
  **/
 public interface UserDao {
+
+    void insert();
 }

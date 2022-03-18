@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
  **/
 @Configuration
 @EnableConfigurationProperties(RpcConfigProperties.class)
-public class RpcProviderAutoConfiguration {
+public class ProviderAutoConfiguration {
 
     @Autowired
     private RpcConfigProperties configProperties;
@@ -29,10 +29,13 @@ public class RpcProviderAutoConfiguration {
      */
     @Bean
     public TinyRpcProvider init() throws Exception {
+        //获取配置文件中注册中心类型
         RegistryType type = RegistryType.valueOf(configProperties.getRegistryType());
 
+        //获取注册服务Service，默认是ZookeeperService
         IRegistryService registryService = RegistryFactory.getInstance(configProperties.getRegistryAddr(), type);
 
+        //返回TinyRpcProvider对象
         return new TinyRpcProvider(configProperties.getServicePort(), registryService);
     }
 }

@@ -1,4 +1,4 @@
-package com.leo.rpc.protocol;
+package com.leo.rpc.common;
 
 import lombok.Data;
 

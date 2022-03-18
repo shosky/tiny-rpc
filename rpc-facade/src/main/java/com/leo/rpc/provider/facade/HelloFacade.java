@@ -5,5 +5,7 @@ package com.leo.rpc.provider.facade;
  * @date: 2022-03-17
  * @description:
  **/
-public class HelloFacade {
+public interface HelloFacade {
+
+    String hello(String name);
 }
