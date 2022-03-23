@@ -19,6 +19,14 @@
 5. 动态代理：基于Cglib实现Service注入，基于代理机制增强Service，实现无感调用
 6. 服务注册与发现：采用Zookeeper实现服务注册与发现
 
+## zk节点目录
+- tiny_rpc
+  - com.tiny.kv.rpc.facade.VoteFacade#1.0.0
+    - 127.0.0.1:2781
+    - 127.0.0.1:2782
+    - 127.0.0.1:2783
+  - com.tiny.kv.rpc.facade.HeartFacade#1.0.0
+
 ## 使用方式
 1. 启动Zookeeper。 
 `docker pull zookeeper & docker run --name my_zookeeper -d zookeeper:latest` 
